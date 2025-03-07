@@ -1,0 +1,19 @@
+document.getElementById("password").addEventListener("input", function(){
+    let password = this.value;
+    let isLengthValid = password.length >= 8;
+    let hasUppercase = /[A-Z]/.test(password);
+    let hasLowercase = /[a-z]/.test(password);
+    let hasNumber = /\d/.test(password);
+    let hasPunctuation = /[!@#$%^&*()_+{}:;<>,.?~\\/-]/.test(password);
+
+    
+    if (isLengthValid && hasUppercase && hasLowercase && hasNumber && hasPunctuation) {
+        this.classList.remove("invalid");
+        this.classList.add("valid");
+    } else {
+        this.classList.remove("valid");
+        this.classList.add("invalid");
+    }
+
+    });
+    
